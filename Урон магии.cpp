@@ -1,4 +1,4 @@
-﻿#include<iostream>
+#include<iostream>
 #include<time.h>
 #include<cstdlib>
 
@@ -9,11 +9,11 @@ void query(int& spell);
 void spell_query(int& spell);
 int heal_spell();
 int npc_damage();
-int oof();
-int oofi();
-int heal();
+void oof();
+void oofi();
+void heal();
 //int defence_spell();
-int cheker();
+void cheker();
 
 int main() {
 	int spell;
@@ -57,11 +57,10 @@ int heal_spell() {
 	return rand() % 10 + 1;
 }
 
-int heal() {
+void heal() {
 	player_health += heal_spell();
 	if (player_health > 100)
 		player_health = 100;
-	return 0;
 }
 
 /*int defence_spell(int& defence,) {
@@ -74,9 +73,8 @@ int attack_spell() {
 	srand(time(0));
 		return rand() % 10 + 1;
 }
-int oofi() {
+void oofi() {
 	npc_health -= attack_spell();
-	return 0;
 }
 
 int npc_damage() {
@@ -84,16 +82,13 @@ int npc_damage() {
 	return rand() % 10 + 1;
 }
 
-int oof() {
+void oof() {
 	player_health -= npc_damage();
-	return 0;
 }
 
-int cheker() {
+void cheker() {
 	if (player_health < 0) 
 		cout << "YOU LOSE" << endl;
 	else if  (npc_health < 0)
-	cout << "YOU WON" << endl;
-	
-	return 0;
+		cout << "YOU WON" << endl;
 }
