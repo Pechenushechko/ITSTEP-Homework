@@ -7,13 +7,13 @@ int player_health = 100;
 int npc_health = 100;
 int npc_shot;
 void query(int& spell);
-void spell_query(int& spell);
+void spell_query(int& spell,int& defence);
 int heal_spell();
 void npc_damage();
 void player_death();
 void npc_death();
 void heal();
-void defence_spell(int& defence, int& npc_shot);
+void defence_spell(int& defence);
 void cheker();
 
 int main() {
@@ -26,7 +26,7 @@ int main() {
 		player_death();
 		cout << npc_shot << endl;
 		query(spell);
-		spell_query(spell);
+		spell_query(spell,defence);
 		cheker();
 	}
 	return 0;
@@ -40,13 +40,13 @@ void query(int& spell) {
 	cin >> spell;
 }
 
-void spell_query(int& spell, int& defence, int& npc_shot) {
+void spell_query(int& spell,int& defence ) {
 	switch (spell) {
 	case 1:
 		heal();
 		break;
 	case 2:
-		defence_spell(defence,npc_shot);
+		defence_spell( defence);
 		break;
 	case 3:
 		npc_death();
