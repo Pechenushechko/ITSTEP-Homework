@@ -5,14 +5,15 @@
 using namespace std;
 int player_health = 100;
 int npc_health = 100;
+int npc_shot;
 void query(int& spell);
 void spell_query(int& spell);
 int heal_spell();
-int npc_damage();
-void oof();
-void oofi();
+void npc_damage();
+void player_death();
+void npc_death();
 void heal();
-//int defence_spell();
+void defence_spell(int& defence, int& npc_shot);
 void cheker();
 
 int main() {
@@ -21,7 +22,9 @@ int main() {
 	while (player_health > 0 && npc_health > 0) {
 		cout << "npc health " << npc_health << endl;
 		cout << "your health:" << player_health << endl;
-		oof();
+		npc_damage();
+		player_death();
+		cout << npc_shot << endl;
 		query(spell);
 		spell_query(spell);
 		cheker();
@@ -37,18 +40,18 @@ void query(int& spell) {
 	cin >> spell;
 }
 
-void spell_query(int& spell) {
+void spell_query(int& spell, int& defence, int& npc_shot) {
 	switch (spell) {
 	case 1:
 		heal();
 		break;
 	case 2:
-		//defence_spell();
+		defence_spell(defence,npc_shot);
 		break;
 	case 3:
-		oofi();
+		npc_death();
 		break;
-	default: 
+	default:
 		cout << "aaaaaa" << endl;
 	}
 }
@@ -63,32 +66,31 @@ void heal() {
 		player_health = 100;
 }
 
-/*int defence_spell(int& defence,) {
-	if (defence = 1)
-		npc_damage = 0;
-	return 0;
-}*/
+void defence_spell(int& defence) {
+	if (defence = 1);
+		npc_shot = 0; 
+}
 
 int attack_spell() {
 	srand(time(0));
-		return rand() % 10 + 1;
+	return rand() % 10 + 1;
 }
-void oofi() {
+void npc_death() {
 	npc_health -= attack_spell();
 }
 
-int npc_damage() {
+void npc_damage(){
 	srand(time(0));
-	return rand() % 10 + 1;
+	npc_shot = rand() % 10 + 1;
 }
 
-void oof() {
-	player_health -= npc_damage();
+void player_death () {
+	player_health -= npc_shot; 
 }
 
 void cheker() {
-	if (player_health < 0) 
+	if (player_health < 0)
 		cout << "YOU LOSE" << endl;
-	else if  (npc_health < 0)
+	else if (npc_health < 0)
 		cout << "YOU WON" << endl;
 }
