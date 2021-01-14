@@ -1,7 +1,6 @@
 ﻿#include <iostream>
-using std::cout;
-using std::cin;
-using std::endl;
+using namespace std;
+
 
 const int MAX_USERS = 10; //максимально допустимое количество пользователей в чате
 void add_user(int& user_counter);
