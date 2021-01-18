@@ -23,10 +23,10 @@ int main() {
 		cout << "npc health " << npc_health << endl;
 		cout << "your health:" << player_health << endl;
 		npc_damage();
-		player_death();
 		cout << npc_shot << endl;
 		query(spell);
 		spell_query(spell);
+		player_death();
 		cheker();
 	}
 	return 0;
