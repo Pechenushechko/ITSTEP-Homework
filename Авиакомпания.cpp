@@ -70,4 +70,5 @@ int main() {
 		cin >> end_programm;
 		if (end_programm == 'e') break;
 	}
+	return 0;
 }
