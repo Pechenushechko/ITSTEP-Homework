@@ -24,7 +24,7 @@ void fr_group(string& rg_name, string& students, string& students2){
 
 void cheker(string& rg_name, string& students, string& students2) {
 	for (int g = 0; g < 5; g++) {
-		if (rg_name != students[g] && rg_name == students2[g]) {
+		if (rg_name != students[g] && rg_name != students2[g]) {
 			cout<<"No way "
 		}
 	}
