@@ -29,3 +29,4 @@ void cheker(string& rg_name, string& students, string& students2) {
 		}
 	}
 }
+//не работает :(
