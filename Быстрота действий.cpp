@@ -9,7 +9,7 @@ int main() {
 	string tt[10];
 	cout << "Helo,please enter some names." << endl;
 	for (int i = 0; i < 10; i++) {
-		cin >> tt[i];
+		 tt[i] = "qq";
 	}
 	cout << "You enter thats names:" << endl;
 	for (int g = 0; g < 10; g++) {
@@ -17,7 +17,7 @@ int main() {
 	}
 	cout << endl;
 	cout << "What name you wanna find?" << endl;
-	cin >> n_name;
+	 n_name = "ww";
 	for (int o = 0; o < 10; o++) {
 		 if (n_name == tt[o]) {
 			 check = true;
@@ -31,7 +31,7 @@ int main() {
 		cout << "ff" << endl;
 	}
 	int end_time = clock();
-	int result = start_time - end_time;
+	int result = end_time - start_time;
 	cout << result << endl;
 	return 0;
-}
+}	
