@@ -1,8 +1,9 @@
 #include<iostream>
+#include<ctime>
 using namespace std;
 
-
 int main() {
+	int start_time = clock();
 	bool check = false;
 	string n_name;
 	string tt[10];
@@ -29,5 +30,8 @@ int main() {
 	else {
 		cout << "ff" << endl;
 	}
+	int end_time = clock();
+	int result = start_time - end_time;
+	cout << result << endl;
 	return 0;
 }
