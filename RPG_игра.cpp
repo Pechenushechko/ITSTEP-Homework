@@ -16,28 +16,17 @@ private:
 	void repair();
 };
 
-void Oldrik_dialogue();
-
 NPC::NPC(string x, int y) {
 	name = x;
 	id = y;
 }
 
-void NPC::dialogue() {
-	if (id == 1) {
-		Oldrik_dialogue();
-	}
-	else {
-		cout << "oh,Hello" << endl;
-	}
-}
-
-void Oldrik_dialogue() {
+void Oldrick_dialogue() {
+	int switch_answ;
+	string myName;
 	int force = 3;
 	int answer = true;
 	int answer2 = true;
-	string myName;
-	int switch_answ;
 
 	cout << "Enter your name: " << endl;
 	cin >> myName;
@@ -112,16 +101,33 @@ void Oldrik_dialogue() {
 	}
 }
 
-int main(int& y) {
+
+void NPC::dialogue() {
+	
+	if (id == 1) {
+		Oldrick_dialogue();
+	}
+	else if (id == 2) {
+		cout << "Приветствую путник,я единственный трактирщик в этом захолустье." << endl;
+		cout << "Устраивайся поудобнее и наслаждайся своим времяпрепровождением." << endl;
+	}
+}
+
+int main() {
 	setlocale(0, "ru");
+
+	int choice;
+
 	NPC Oldrick("Oldrick", 1);
-	NPC Trenton_villager("Trenton", 2);
-	int NpC_id;
-	cin >> NpC_id;
-	if (NpC_id == 1) {
+	NPC Lina("Lina", 2);
+	cout << "С кем вы хотите поговорить?" << endl;
+	cout << "1-Кузнец." << endl;
+	cout << "2-Трактирщик." << endl;
+	cin >> choice;
+	if (choice == 1) {
 		Oldrick.dialogue();
 	}
-	else if (NpC_id == 2) {
-		Trenton_villager.dialogue();
+	else if (choice == 2) {
+		Lina.dialogue();
 	}
 }
