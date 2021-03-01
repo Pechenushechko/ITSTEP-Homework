@@ -1,17 +1,18 @@
 #include <iostream>
 using namespace std;
 
-string*  foo() {
-    string* p_d = NULL;
-    p_d = new string("Hello world");
-    return p_d;
+string* foo() {
+    string* hello = NULL;
+    hello = new string("Hello World!");
+    return hello;
 }
 
 int main()
 {
-    string* p_d =foo();
-    //foo();
-    cout << *p_d << endl;
+    string* hello = foo();
+    cout << *hello << endl;
 
-    delete p_d;
+    delete hello;
+
+    return 0;
 }
