@@ -1,9 +1,4 @@
-﻿/*В этой программе создан класс weapon, описывающий поведение обыкновенного немагического оружия в игре.
-Задание: создать класс 
-
-, являющийся наследником класса weapon.*/
-
-#include <iostream>
+﻿#include <iostream>
 #include <ctime>
 using namespace std;
 
@@ -73,7 +68,7 @@ int weapon::hit() {
     return damage; //возвращаем урон во внешнюю программу
 }
 
-class magic_weapon :public weapon {
+class magic_weapon :public weapon {//класс магии,а пока простозаклинания лечения 
 public:
     void set_heal(int x);
     void magic_health(int& player_health);
@@ -104,7 +99,7 @@ int magic_weapon::get_magic_damage() {
     return this->magic_damage;
 }
 
-class dricklabrus : public magic_weapon {
+class dricklabrus : public magic_weapon {//класс единственого водяного меча Дриклабрус
     int dricklabrus_damage;
 public:
     void set_dricklabrus_damage(int x);
@@ -119,15 +114,15 @@ int dricklabrus::get_dricklabrus_damage() {
     return this->dricklabrus_damage;
 }
 
-
 int main() {
     int choice;
     int main_menu;
     int mana = 10;
-    weapon simple_iron_sword, players_BIG_sword(20); //создаем два объекта - два меча, себе и противнику
-    magic_weapon Healing_mag;
 
-    dricklabrus Dricklabrus;
+    weapon simple_iron_sword, players_BIG_sword(20); //создаем два объекта - два меча, себе и противнику
+    magic_weapon Healing_mag;//создаём заклинание лечения
+    dricklabrus Dricklabrus;//создаём наше самое сильное оружие
+
     Dricklabrus.set_dricklabrus_damage(35);
     Dricklabrus.set_magic_damage(40);
     Healing_mag.set_heal(10);
@@ -150,9 +145,8 @@ int main() {
                 enemy_health = enemy_health - players_BIG_sword.hit(); //игрок бьет, уменьшается здоровье врага
             }
             player_health = player_health - simple_iron_sword.hit();
-            //enemy_health = enemy_health - players_BIG_sword.hit(); //игрок бьет, уменьшается здоровье врага
-            cout << "Enemy's health: " << enemy_health << endl;
-            cout << "My health: " << player_health << endl;
+            cout << "Enemy's health: " << enemy_health << endl;//здоровье противника
+            cout << "My health: " << player_health << endl;//здоровье игрока
         }
         cout << "Player BIG sword condition: " << players_BIG_sword.get_durability() - players_BIG_sword.get_degradation() << endl;
     }
@@ -193,10 +187,7 @@ int main() {
         }
         cout << "Dricklabrus condition: " << Dricklabrus.get_durability() - Dricklabrus.get_degradation() << endl;
     }
-
-
     cout << "Simple sword condition: " << simple_iron_sword.get_durability() - simple_iron_sword.get_degradation() << endl;
    
-
     return 0;
 }
