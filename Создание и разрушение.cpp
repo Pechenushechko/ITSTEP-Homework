@@ -35,8 +35,5 @@ int main()
 	slide Kick_flip("Wait,thats illegal",10);
 	Kick_flip.Illegal();
 	
-	
-
-
 	return 0;
 }
