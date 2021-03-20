@@ -126,4 +126,5 @@ int main()
         break;
 }
         Don_Duran.merchant_inventory.open_inventory();
+     return 0;
 }
