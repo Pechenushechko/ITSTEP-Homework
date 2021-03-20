@@ -102,7 +102,7 @@ int main()
 {
     bool trader_menu = true;
     int product;
-    merchant Don_Duran;
+    merchant Don_Duran;//Вивьен,Арнольд
     
     Don_Duran.dialogue();
     Sleep(3600);
