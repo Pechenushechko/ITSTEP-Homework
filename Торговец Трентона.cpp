@@ -59,9 +59,7 @@ void inventory::remove(string some_item) {
            invent[i] = invent[i + 1];
         }
     }
-    else {
-        cout << "fsdf " << endl;
-    }
+
     item_counter--;
     string* temp = new string[item_counter];
     for (int i = 0; i < item_counter - 1; i++) temp[i] = invent[i];
