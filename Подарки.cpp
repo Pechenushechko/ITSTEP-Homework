@@ -13,7 +13,7 @@ protected:
 class trophies:public gifts {
 public:
     void set_count(int x) { this->count = x; }
-    void show_count() { cout << count << endl; }
+    void show_count() { cout <<"Number of yours trophies:"<< count << endl; }
 private:
 
 };
@@ -21,9 +21,8 @@ private:
 class sticker_packs:public gifts {
 public:
     void set_count(int x) { this->count = x * 5; }
-    void show_count() { cout<<count<<endl; }
+    void show_count() { cout<<"Number of yours stickers:"<<count<<endl; }
 private:
-
 };
 
 class users {
@@ -41,8 +40,6 @@ void users::show_gifts(){
 
 int main()
 {
-    setlocale(0, "RUS");
-    
     int present;
     bool menu = true;
 
