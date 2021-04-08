@@ -53,10 +53,10 @@ int main()
         cout << "2-sticker_packs" << endl;
         cin >> present;
         if(present == 1){
-            user.medals.show_count();
+            user.medals.show_count();//представьте здесь картинки медалей
         }
         else if (present == 2) {
-            user.coockies.show_count();
+            user.coockies.show_count();//представьте здесь картики стикеров
         }
         else {
             cout << "what a fool!" << endl;
