@@ -6,7 +6,7 @@ public:
     virtual void set_count(int x) = 0;
     virtual void show_count() = 0;
 protected:
-    int count;
+    int count = 0;
 
 };
 
