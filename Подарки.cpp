@@ -56,7 +56,7 @@ int main()
             user.medals.show_count();//представьте здесь картинки медалей
         }
         else if (present == 2) {
-            user.coockies.show_count();//представьте здесь картики стикеров
+            user.coockies.show_count();//представьте здесь картинки стикеров
         }
         else {
             cout << "what a fool!" << endl;
