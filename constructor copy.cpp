@@ -4,9 +4,9 @@ using namespace std;
 
 class Pet {
 public:
-	Pet(int x,int z,int c, int h);
+	Pet(int x, int z, int c, int h);
 	~Pet();
-	Pet(const Pet& c);
+	Pet(const Pet& pt);
 	void set_id(int i);
 	void set_name(string nm);
 	void get_old();
@@ -27,8 +27,8 @@ private:
 	int* hunger;
 };
 
-Pet::Pet(int x,int z,int c,int h) {
-	is_ill =new bool (false);
+Pet::Pet(int x, int z, int c, int h) { //конструктор 
+	is_ill = new bool(false);
 	age = new int(z);
 	health = new int(x);
 	mood = new int(c);
@@ -77,7 +77,7 @@ void Pet::feed() {
 
 void Pet::sad() {
 	if (mood > 0) {
-	this->mood--;
+		this->mood--;
 	}
 }
 
@@ -85,7 +85,7 @@ void Pet::happy() {
 	this->mood++;
 }
 
-Pet::~Pet(){
+Pet::~Pet() { //деструктор 
 	delete id;
 	delete name;
 	delete age;
@@ -93,6 +93,7 @@ Pet::~Pet(){
 	delete mood;
 	delete is_ill;
 	delete hunger;
+
 	id = 0;
 	name = 0;
 	health = 0;
@@ -101,12 +102,24 @@ Pet::~Pet(){
 	hunger = 0;
 }
 
+Pet::Pet(const Pet& pt) { //конструктор копирования 
+	this-> id = new int(*(pt.id));
+	this-> age = new int(*(pt.age));
+	this-> name = new string(*(pt.name));
+	this-> health = new int(*(pt.health));
+	this-> mood = new int(*(pt.mood));
+	this-> hunger = new int(*(pt.hunger));
+	this-> is_ill= new bool(*(pt.is_ill));
+
+	cout << "Hello from copy constructor " << endl;
+}
+
 int main() {
-	Pet tamagochi(100,0,1,0);
+	Pet tamagochi(100, 0, 1, 0);
 	tamagochi.set_id(1);
 	tamagochi.set_name("Tamik");
 
-	//tamagochi.get_sick();
-
+	Pet Temik(tamagochi);
+	
 	return 0;
 }
