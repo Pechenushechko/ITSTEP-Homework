@@ -35,8 +35,8 @@ Dino::Dino()
 {
 	health = new int(100);
 	playible = new bool(false);
+
 	rewards = new string[3];
-	rewards[0] = "cherry";
 	rewards[1] = "apple";
 	rewards[2] = "banana";
 }
@@ -57,7 +57,7 @@ void Dino::set_playible() {
 }
 
 bool Dino::get_playible() {
-	return this->playible;
+	return *(this->playible);
 }
 
 int Dino::get_health() {
@@ -67,7 +67,7 @@ int Dino::get_health() {
 void Dino::get_reward(){
 	int array;
 	srand(time(0));
-	array = rand() % 4 + 1;
+	array = rand() % 2 + 1;
 	cout << rewards[array] << endl;
 }
 
@@ -103,7 +103,6 @@ Corona::Corona()
 	health = new int(50);
 	playible = new bool(false);
 	rewards = new string[3];
-	rewards[0] = "tomato";
 	rewards[1] = "potat";
 	rewards[2] = "Lettuce";
 }
@@ -123,7 +122,7 @@ void Corona::set_playible() {
 }
 
 bool Corona::get_playible() {
-	return this->playible;
+	return *(this->playible);
 }
 
 int Corona::get_health() {
@@ -133,7 +132,7 @@ int Corona::get_health() {
 void Corona::get_reward() {
 	int array;
 	srand(time(0));
-	array = rand() % 4 + 1;
+	array = rand() % 2 + 1;
 	cout << rewards[array] << endl;
 }
 
