@@ -18,6 +18,7 @@ class Dino : public Player
 public:
 	Dino();
 	~Dino();
+	Dino(const Dino& dd);
 	void set_playible();
 	bool get_playible();
 	int get_health();
@@ -50,6 +51,13 @@ Dino::~Dino()
 	playible = 0;
 	health = 0;
 	rewards = 0;
+}
+
+Dino::Dino(const Dino& dd) {
+	this->health = new int(*(health));
+	this->playible = new bool(*(playible));
+
+	this->rewards = new string(*(rewards));
 }
 
 void Dino::set_playible() {
@@ -85,6 +93,7 @@ class Corona : public Player
 public:
 	Corona();
 	~Corona();
+	Corona(const Corona* nn);
 	void set_playible();
 	bool get_playible();
 	int get_health();
@@ -115,6 +124,13 @@ Corona ::~Corona()
 	playible = 0;
 	health = 0;
 	rewards = 0;
+}
+
+Corona::Corona(const Corona* nn){
+	this->health = new int(*(health));
+	this->playible = new bool(*(playible));
+
+	this->rewards = new string(*(rewards));
 }
 
 void Corona::set_playible() {
