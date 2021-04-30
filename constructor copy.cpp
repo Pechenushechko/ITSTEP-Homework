@@ -18,8 +18,8 @@ public:
 	void sad();
 	void happy();
 private:
-	int* id;
-	string* name;
+	int* id = 0;
+	string* name = 0;
 	int* age;
 	int* health;
 	int* mood;
