@@ -38,6 +38,6 @@ int main() {
     B bb;
     int set_n;
     cin >> set_n;
-    bb.set_newA(set_n);
-    cout << bb.get_newA() << endl;
+    bb.set_classA(set_n);
+    cout << bb.get_classA() << endl;
 }
