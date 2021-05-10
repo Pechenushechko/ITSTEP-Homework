@@ -14,8 +14,8 @@ class B {
 public:
     void set_b(int b) { this->b = b; }
     int get_b() { return this->b; }
-    void set_newA(int a);
-    int get_newA();
+    void set_classA(int a);
+    int get_classA();
 
 
 private:
@@ -24,13 +24,13 @@ private:
 
 };
 
-void B::set_newA(int c) {
+void B::set_classA(int c) {
     cout << "Setter was here!" << endl;
     a_b.set_a(c);
 
 }
 
-int B::get_newA() {
+int B::get_classA() {
     return a_b.get_a();
 }
 
