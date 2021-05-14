@@ -199,7 +199,7 @@ int main() {
 			if (Virus.get_playible() == false) {
 				Reptile.get_reward();
 			}
-			else {
+			else if(Reptile.get_playible() == false) {
 				Virus.get_reward();
 			}
 			return -1;
