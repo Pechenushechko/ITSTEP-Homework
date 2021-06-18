@@ -50,4 +50,11 @@ int main()
     p2 = p2;
 
     foo();
+    
+    //встроенные указатели
+    auto_ptr<string> p1(new string("Oh god"));
+
+    unique_ptr<string> p2(new string("its Jason Born"));
+
+    shared_ptr<string> p3(new string("Damn"));
 }
